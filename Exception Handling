@@ -1,0 +1,21 @@
+public class Main {
+
+    public static void main(String[] args) {
+        MusicTest1 mt = new MusicTest1();
+        mt.play();
+    }
+}
+
+import javax.sound.midi.*;
+public class MusicTest1 {
+
+    public void play(){
+
+        try{
+            Sequencer sequencer = MidiSystem.getSequencer();  // put the risky code in a try block
+            System.out.println("we got Sequencer");
+        }catch (MidiUnavailableException ex){   //make a ‘catch’ block for what to do if the exceptional situation happens
+            System.out.println("Bummer");       // in other words, a MidiUnavailableException is thrown by the call to getSequencer().
+        }
+    }// close play
+}
